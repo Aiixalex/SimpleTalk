@@ -1,5 +1,5 @@
 TARGET = test
-OBJS = test.o list.o
+OBJS = test.o list.o message_queue_utils.o
 
 CFLAGS = -Wall -g -D_POSIX_C_SOURCE=199309L
 CC = gcc
