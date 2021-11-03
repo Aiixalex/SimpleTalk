@@ -23,3 +23,13 @@ char* message_dequeue(List* list) {
 
     return dequeued_message;
 }
+
+int get_message_queue_size(List* list) {
+    pthread_mutex_lock(&message_queue_mutex);
+
+    int queue_size = List_count(list);
+
+    pthread_mutex_unlock(&message_queue_mutex);
+
+    return queue_size;
+}

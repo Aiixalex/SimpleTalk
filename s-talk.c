@@ -6,8 +6,11 @@
 #include <errno.h>
 
 #include "list.h"
-#include "input_reader.h"
 #include "message_queue.h"
+#include "input_reader.h"
+#include "output_writer.h"
+#include "udp_client.h"
+#include "udp_server.h"
 
 int main(int argc, char *argv[]) {
     if (argc != 4) {
@@ -19,9 +22,19 @@ int main(int argc, char *argv[]) {
     char* remote_name = argv[2];
     char* remote_port = argv[3];
 
-    List* message_queue = List_create();
+    List* input_queue = List_create();
+    List* output_queue = List_create();
 
-    init_input_reader(message_queue);
+    InitInputReader(input_queue);
+    InitUdpClient(input_queue, remote_name, remote_port);
+    InitUdpServer(output_queue, my_port);
+    InitOutputWriter(output_queue);
 
-    List_free(message_queue, free);
+    ShutDownInputReader();
+    ShutDownUdpClient();
+    ShutDownUdpServer();
+    ShutDownOutputWriter();
+
+    List_free(input_queue, free);
+    List_free(output_queue, free);
 }

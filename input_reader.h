@@ -3,8 +3,8 @@
 
 #include "list.h"
 
-void process_input(void* message_queue);
-void init_input_reader(void* message_queue);
-void input_reader_shut_down();
+void ReadInput(void* message_queue);
+void InitInputReader(List* message_queue);
+void ShutDownInputReader();
 
 #endif

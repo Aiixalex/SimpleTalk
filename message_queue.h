@@ -5,5 +5,6 @@
 
 int message_enqueue(List* list, char* message);
 char* message_dequeue(List* list);
+int get_message_queue_size(List* list);
 
 #endif
