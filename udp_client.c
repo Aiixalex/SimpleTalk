@@ -65,7 +65,7 @@ void* UdpSendto(void* message_queue) {
         pthread_cond_wait(&udp_client_cond, &udp_client_mutex);
         pthread_mutex_unlock(&udp_client_mutex);
 
-        char* message = message_dequeue(message_queue);
+        char* message = MessageDequeue(message_queue);
         if (message == NULL) {
             fprintf(stderr, "message dequeue failed.");
             continue;

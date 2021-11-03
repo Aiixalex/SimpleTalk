@@ -19,7 +19,7 @@ void* WriteOutput(void* message_queue) {
         pthread_cond_wait(&output_writer_cond, &output_writer_mutex);
         pthread_mutex_unlock(&output_writer_mutex);
 
-        char* message = message_dequeue(message_queue);
+        char* message = MessageDequeue(message_queue);
         if (message == NULL) {
             fprintf(stderr, "message dequeue failed.");
             continue;

@@ -76,7 +76,7 @@ void* UdpRecv(void* message_queue) {
         char* message = malloc((buf_size + 1) * sizeof(char));
         strncpy(message, buf, buf_size); // a null byte is written by strncpy() to message[buf_size]
 
-        if (message_enqueue(message_queue, message) == LIST_FAIL) {
+        if (MessageEnqueue(message_queue, message) == LIST_FAIL) {
             fprintf(stderr, "message enqueue failed: %s", message);
         }
 

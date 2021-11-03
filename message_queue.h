@@ -3,8 +3,8 @@
 
 #include "list.h"
 
-int message_enqueue(List* list, char* message);
-char* message_dequeue(List* list);
-int get_message_queue_size(List* list);
+int MessageEnqueue(List* list, char* message);
+char* MessageDequeue(List* list);
+int GetMessageQueueSize(List* list);
 
 #endif

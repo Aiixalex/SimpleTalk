@@ -4,7 +4,7 @@
 
 static pthread_mutex_t message_queue_mutex = PTHREAD_MUTEX_INITIALIZER;
 
-int message_enqueue(List* list, char* message) {
+int MessageEnqueue(List* list, char* message) {
     pthread_mutex_lock(&message_queue_mutex);
 
     int prepend_result = List_prepend(list, message);
@@ -14,7 +14,7 @@ int message_enqueue(List* list, char* message) {
     return prepend_result;
 }
 
-char* message_dequeue(List* list) {
+char* MessageDequeue(List* list) {
     pthread_mutex_lock(&message_queue_mutex);
 
     char* dequeued_message = List_trim(list);
@@ -24,7 +24,7 @@ char* message_dequeue(List* list) {
     return dequeued_message;
 }
 
-int get_message_queue_size(List* list) {
+int GetMessageQueueSize(List* list) {
     pthread_mutex_lock(&message_queue_mutex);
 
     int queue_size = List_count(list);
