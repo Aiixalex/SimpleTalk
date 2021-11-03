@@ -67,7 +67,7 @@ void* UdpRecv(void* message_queue) {
         peer_addr_len = sizeof(struct sockaddr_storage);
         int buf_size = recvfrom(sfd, buf, MAXBUFSIZE, 0, (struct sockaddr *)&peer_addr, &peer_addr_len);
 
-        if (buf_size != 0) {
+        if (buf_size == -1) {
             handle_error("recvfrom() failed");
         }
 
