@@ -7,5 +7,6 @@ void* WriteOutput(void* message_queue);
 void SignalOutputWriter();
 void InitOutputWriter(List* message_queue);
 void ShutDownOutputWriter();
+void CancelOutputWriter();
 
 #endif

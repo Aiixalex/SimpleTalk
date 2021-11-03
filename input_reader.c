@@ -11,6 +11,7 @@
 #include "handle_error.h"
 #include "udp_client.h"
 #include "udp_server.h"
+#include "output_writer.h"
 
 #define MAXBUFSIZE 4096
 
@@ -29,17 +30,15 @@ void* ReadInput(void* message_queue) {
 
         char* message = malloc((buf_size + 1) * sizeof(char));
         strncpy(message, buf, buf_size); // a null byte is written by strncpy() to message[buf_size]
-        printf("%d %d\n", message[buf_size-1] == '\n', buf[buf_size] == '\0');
 
         if (message_enqueue(message_queue, message) == LIST_FAIL) {
             fprintf(stderr, "message enqueue failed: %s", message);
         }
 
-        printf("%d %s", buf_size, buf);
-
         if (strcmp(message, "!\n") == 0) {
             SignalUdpClient();
             CancelUdpServer();
+            CancelOutputWriter();
             return NULL;
         }
 

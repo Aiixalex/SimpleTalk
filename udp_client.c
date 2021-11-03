@@ -115,3 +115,10 @@ void ShutDownUdpClient() {
         handle_error_en(error_num, "pthread_join udp_client_thread failed.");
     }
 }
+
+void CancelUdpClient() {
+    int error_num = pthread_cancel(udp_client_thread);
+    if (error_num != 0) {
+        handle_error_en(error_num, "pthread_cancel udp_client_thread failed.");
+    }
+}

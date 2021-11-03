@@ -13,6 +13,7 @@
 #include "handle_error.h"
 #include "output_writer.h"
 #include "input_reader.h"
+#include "udp_client.h"
 
 #define MAXBUFSIZE 4096
 
@@ -82,6 +83,7 @@ void* UdpRecv(void* message_queue) {
         if (strcmp(message, "!\n") == 0) {
             SignalOutputWriter();
             CancelInputReader();
+            CancelUdpClient();
             close(sfd);
             return NULL;
         }

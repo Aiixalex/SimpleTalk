@@ -61,3 +61,10 @@ void ShutDownOutputWriter() {
         handle_error_en(error_num, "pthread_join output_writer_thread failed.");
     }
 }
+
+void CancelOutputWriter() {
+    int error_num = pthread_cancel(output_writer_thread);
+    if (error_num != 0) {
+        handle_error_en(error_num, "pthread_cancel output_writer_thread failed.");
+    }
+}
