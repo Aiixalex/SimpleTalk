@@ -4,5 +4,6 @@
 void* UdpRecv(void* message_queue);
 void InitUdpServer(List* message_queue, char* my_port);
 void ShutDownUdpServer();
+void CancelUdpServer();
 
 #endif

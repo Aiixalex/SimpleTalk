@@ -6,5 +6,6 @@
 void ReadInput(void* message_queue);
 void InitInputReader(List* message_queue);
 void ShutDownInputReader();
+void CancelInputReader();
 
 #endif

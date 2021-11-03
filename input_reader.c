@@ -10,6 +10,7 @@
 #include "message_queue.h"
 #include "handle_error.h"
 #include "udp_client.h"
+#include "udp_server.h"
 
 #define MAXBUFSIZE 4096
 
@@ -38,6 +39,7 @@ void* ReadInput(void* message_queue) {
 
         if (strcmp(message, "!\n") == 0) {
             SignalUdpClient();
+            CancelUdpServer();
             return NULL;
         }
 
@@ -58,5 +60,12 @@ void ShutDownInputReader() {
     int error_num = pthread_join(input_reader_thread, NULL);
     if (error_num != 0) {
         handle_error_en(error_num, "pthread_join input_reader_thread failed.");
+    }
+}
+
+void CancelInputReader() {
+    int error_num = pthread_cancel(input_reader_thread);
+    if (error_num != 0) {
+        handle_error_en(error_num, "pthread_cancel input_reader_thread failed.");
     }
 }
