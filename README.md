@@ -1,7 +1,6 @@
-# SimpleTalk
-A simple "chat"-like facility that enables someone at one terminal (or Xterm) to communicate with someone at another terminal. 
+## About SimpleTalk
 
-### About SimpleTalk
+A simple "chat"-like facility that enables someone at one terminal (or Xterm) to communicate with someone at another terminal. 
 
 All four threads will share access to a list ADT:
 
@@ -13,9 +12,9 @@ All four threads will share access to a list ADT:
 
 - The screen output thread will take each message off this list and output it to the screen.
 
-### Getting Started
+## Getting Started
 
-#### Installation
+### Installation
 
 ```
 git clone https://github.com/Aiixalex/SimpleTalk/
@@ -25,7 +24,7 @@ git clone https://github.com/Aiixalex/SimpleTalk/
 make
 ```
 
-#### Usage
+### Usage
 
 The general format is:
 
