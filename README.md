@@ -20,14 +20,17 @@ All four threads will share access to a list ADT:
 git clone https://github.com/Aiixalex/SimpleTalk/
 ```
 
+### Build
+
 ```
 cd build
 make
 ```
 
-#### Clean
+### Clean
 
 ```
+cd build
 make clean
 ```
 
