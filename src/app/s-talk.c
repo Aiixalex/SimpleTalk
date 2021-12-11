@@ -5,12 +5,13 @@
 #include <curses.h>
 #include <errno.h>
 
-#include "list.h"
-#include "message_queue.h"
-#include "input_reader.h"
-#include "output_writer.h"
-#include "udp_client.h"
-#include "udp_server.h"
+#include "../io/input_reader.h"
+#include "../io/output_writer.h"
+#include "../utils/list.h"
+#include "../utils/message_queue.h"
+
+#include "../client/udp_client.h"
+#include "../server/udp_server.h"
 
 int main(int argc, char *argv[]) {
     if (argc != 4) {

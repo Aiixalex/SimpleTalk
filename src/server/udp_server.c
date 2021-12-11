@@ -8,12 +8,12 @@
 #include <netdb.h>
 #include <pthread.h>
 
-#include "list.h"
-#include "message_queue.h"
-#include "handle_error.h"
-#include "output_writer.h"
-#include "input_reader.h"
-#include "udp_client.h"
+#include "../client/udp_client.h"
+#include "../io/input_reader.h"
+#include "../io/output_writer.h"
+#include "../utils/handle_error.h"
+#include "../utils/list.h"
+#include "../utils/message_queue.h"
 
 #define MAXBUFSIZE 4096
 

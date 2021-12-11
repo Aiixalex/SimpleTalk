@@ -6,12 +6,12 @@
 #include <errno.h>
 #include <pthread.h>
 
-#include "list.h"
-#include "message_queue.h"
-#include "handle_error.h"
-#include "udp_client.h"
-#include "udp_server.h"
-#include "output_writer.h"
+#include "../client/udp_client.h"
+#include "../io/output_writer.h"
+#include "../server/udp_server.h"
+#include "../utils/handle_error.h"
+#include "../utils/list.h"
+#include "../utils/message_queue.h"
 
 #define MAXBUFSIZE 4096
 

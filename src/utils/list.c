@@ -1,6 +1,7 @@
-#include "list.h"
 #include <stdio.h>
 #include <assert.h>
+
+#include "list.h"
 
 ListsMemoryAllocator lma;
 bool all_lists_initiated = false;

@@ -8,9 +8,10 @@
 #include <netdb.h>
 #include <pthread.h>
 
-#include "list.h"
-#include "message_queue.h"
-#include "handle_error.h"
+#include "../utils/handle_error.h"
+#include "../utils/list.h"
+#include "../utils/message_queue.h"
+
 
 static pthread_t udp_client_thread;
 static char* server_name;

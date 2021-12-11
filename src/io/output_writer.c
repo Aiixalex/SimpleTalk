@@ -5,9 +5,9 @@
 #include <errno.h>
 #include <pthread.h>
 
-#include "list.h"
-#include "message_queue.h"
-#include "handle_error.h"
+#include "../utils/handle_error.h"
+#include "../utils/list.h"
+#include "../utils/message_queue.h"
 
 static pthread_t output_writer_thread;
 static pthread_mutex_t output_writer_mutex = PTHREAD_MUTEX_INITIALIZER;

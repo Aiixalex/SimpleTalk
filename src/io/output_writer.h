@@ -1,7 +1,7 @@
 #ifndef _OUTPUT_WRITER_H_
 #define _OUTPUT_WRITER_H_
 
-#include "list.h"
+#include "../utils/list.h"
 
 void* WriteOutput(void* message_queue);
 void SignalOutputWriter();
