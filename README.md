@@ -21,7 +21,14 @@ git clone https://github.com/Aiixalex/SimpleTalk/
 ```
 
 ```
+cd build
 make
+```
+
+#### Clean
+
+```
+make clean
 ```
 
 ### Usage
